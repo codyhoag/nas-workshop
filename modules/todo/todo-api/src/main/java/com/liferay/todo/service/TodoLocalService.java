@@ -87,6 +87,8 @@ public interface TodoLocalService extends BaseLocalService,
 	public PersistedModel getPersistedModel(Serializable primaryKeyObj)
 		throws PortalException;
 
+	public Todo addBasicTodo(java.lang.String title);
+
 	/**
 	* Adds the todo to the database. Also notifies the appropriate model listeners.
 	*

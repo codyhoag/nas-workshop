@@ -14,6 +14,7 @@
 
 package com.liferay.todo.service.impl;
 
+import com.liferay.todo.model.Todo;
 import com.liferay.todo.service.base.TodoLocalServiceBaseImpl;
 
 /**
@@ -36,4 +37,13 @@ public class TodoLocalServiceImpl extends TodoLocalServiceBaseImpl {
 	 *
 	 * Never reference this class directly. Always use {@link com.liferay.todo.service.TodoLocalServiceUtil} to access the todo local service.
 	 */
+	
+	public Todo addBasicTodo(String title) {
+		Todo todo = todoPersistence.create(counterLocalService.increment());
+		
+		todo.setTitle(title);
+		todo.setCompleted(false);
+		
+		return todo;
+	}
 }

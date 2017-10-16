@@ -70,6 +70,11 @@ public class TodoLocalServiceWrapper implements TodoLocalService,
 		return _todoLocalService.getPersistedModel(primaryKeyObj);
 	}
 
+	@Override
+	public com.liferay.todo.model.Todo addBasicTodo(java.lang.String title) {
+		return _todoLocalService.addBasicTodo(title);
+	}
+
 	/**
 	* Adds the todo to the database. Also notifies the appropriate model listeners.
 	*

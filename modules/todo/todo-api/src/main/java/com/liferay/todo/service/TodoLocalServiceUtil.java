@@ -73,6 +73,11 @@ public class TodoLocalServiceUtil {
 		return getService().getPersistedModel(primaryKeyObj);
 	}
 
+	public static com.liferay.todo.model.Todo addBasicTodo(
+		java.lang.String title) {
+		return getService().addBasicTodo(title);
+	}
+
 	/**
 	* Adds the todo to the database. Also notifies the appropriate model listeners.
 	*
