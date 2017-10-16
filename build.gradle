@@ -7,6 +7,8 @@ task deployTestableModules {
 				!project.name.endsWith("-web")
 		}.deploy
 	}
+
+	dependsOn ":initBundle"
 }
 
 task removeDefaultTestBundles(type: Delete) {
@@ -27,7 +29,7 @@ subprojects {
 
 		startTestableTomcat {
 			checkTimeout = 10 * 60 * 1000
-			dependsOn ":initBundle", deployTestableModules
+			dependsOn deployTestableModules
 		}
 	}
 }
